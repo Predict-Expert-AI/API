@@ -1,5 +1,5 @@
 
-#search models
+# search models
 
 import requests
 import json
@@ -19,7 +19,7 @@ print(response.text)
 
 
 
-#make predictions
+# make predictions
 
 
 import requests
@@ -45,8 +45,8 @@ print(response.text)
 
 
 
-#use binance to get real-time prices
-# Defining Binance API URL
+# use binance to get real-time prices
+#Defining Binance API URL
 key = "https://api.binance.com/api/v3/ticker/price?symbol="
 keyus = "https://api.binance.us/api/v3/ticker/price?symbol="
   
