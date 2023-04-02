@@ -22,6 +22,8 @@ print(response.text)
 
 # make predictions
 
+
+Finance/Prediction Models:
 ```
 import requests
 import json
@@ -45,6 +47,13 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 ```
 
+Art/Drawer:
+
+RealEstate/HousePricing:
+
+Lifestyle/Recommendations/Movies:
+
+Psychology/Twitter-to-personality:  
 
 # use binance to get real-time prices
 
