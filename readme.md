@@ -1,6 +1,7 @@
 
 # search models
 
+```
 import requests
 import json
 
@@ -15,13 +16,13 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
-
+```
 
 
 
 # make predictions
 
-
+```
 import requests
 import json
 
@@ -42,10 +43,12 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
-
+```
 
 
 # use binance to get real-time prices
+
+```
 #Defining Binance API URL
 key = "https://api.binance.com/api/v3/ticker/price?symbol="
 keyus = "https://api.binance.us/api/v3/ticker/price?symbol="
@@ -69,15 +72,16 @@ assets = json.loads('''
 
 asset1='wbtc'
 
-# Access the variables for WBTC
+#Access the variables for WBTC
 assetbinance = assets[asset1]['binance']
 
 
 
 
-# gather price
+#gather price
 url = key+assetbinance  
 data = requests.get(url)
 data = data.json()
 assetprice = data['price']
 print(assetprice)
+```
