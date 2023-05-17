@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "00594943-5084-422a-993c-e9d45f6bdb55",
+		"name": "agi.expert",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3791930"
+	},
+	"item": [
+		{
+			"name": "https://api.agi.expert/predict_simple",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "bv86OrBwLQuBbReg7LAltw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"exchange\":\"Stock\",\"timeFrame\":\"1hr\",\"asset\":\"GOOG\",\"country\":\"USA\",\"model\":\"deepQLearning\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.agi.expert/predict_simple",
+					"protocol": "https",
+					"host": [
+						"api",
+						"agi",
+						"expert"
+					],
+					"path": [
+						"predict_simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.agi.expert/predict_simple/52ae0c11-bf33-45d6-ab36-16ea9c0ceff6",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "bv86OrBwLQuBbReg7LAltw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.agi.expert/predict_simple/52ae0c11-bf33-45d6-ab36-16ea9c0ceff6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"agi",
+						"expert"
+					],
+					"path": [
+						"predict_simple",
+						"52ae0c11-bf33-45d6-ab36-16ea9c0ceff6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
