@@ -45,6 +45,26 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
+task_id = response.text
+
+```
+
+get prediction results
+
+```sh
+import requests
+
+url = f"https://api.agi.expert/predict_simple/{task_id}"
+
+payload = {}
+headers = {
+  'api-key': 'bv86OrBwLQuBbReg7LAltw'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+
 ```
 
 Art/Drawer:
