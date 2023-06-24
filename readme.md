@@ -5,7 +5,7 @@
 import requests
 import json
 
-url = "http://agi.expert/api/search?keyword=Finance"
+url = "http://api.agi.expert/api/search?keyword=Finance"
 
 payload = json.dumps({})
 headers = {
