@@ -28,7 +28,7 @@ Finance/Prediction Models:
 import requests
 import json
 
-url = "http://agi.expert/predict_simple"
+url = "http://api.agi.expert/predict_simple"
 
 payload = json.dumps({
   "exchange": "Stock",
