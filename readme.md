@@ -1,3 +1,100 @@
+# API
+
+## Predict Simple
+
+> The Predict Simple API allows you to initiate predictions for specific stock and crypto assets. This API is designed to be simple to use, requiring only a few parameters to generate predictions. Below, you'll find information on how to use the API, its endpoint, and sample function calls in Python.
+
+### API Endpoint (POST)
+
+```
+http://api.agi.expert/predict_simple
+```
+
+### Parameters
+
+ - **asset (string, required)**: The asset symbol for which you want to generate predictions.
+ - **exchange (string, required)**: The exchange where the asset is traded (Stocks/Crypto). 
+ - **country (string, required)**: The country associated with the asset. For crypto, put 'USA'.
+ - **model (string, optional)**: The predictive model to use for generating predictions. Default is "deepQLearning". Check back for the latest models, as they are updated regularly.
+ - **List of models**:
+   - deepQLearning
+   - XGBoost (Future)
+   - CatBoost (Future)
+   - doubleDeepQLearning (Future)
+   - newsPDoubleDeepQLearning (Future)
+
+### Response
+
+The API response will include the prediction results in JSON format.
+```
+status: success
+result: -11.951863923488109%
+asset: NVDA
+starttime: 2023-08-28 22:13:51.630321
+```
+
+### Usage
+
+**Python Code Snippet**
+```
+import requests
+import json
+
+def request_prediction(url, payload, headers):
+    response = requests.post(url, headers=headers, data=json.dumps(payload))
+    task_id = response.text 
+    verify(url, task_id, headers)
+
+def verify(url, task_id, headers):
+    _url = f"{url}/{task_id}"
+    response = requests.get(_url, headers=headers) 
+    print("Prediction Results: ", response.text)
+```
+
+### Sample Stock Payload
+
+```
+url = "http://api.agi.expert/predict_simple"
+
+payload = {
+    "exchange": "Stock",
+    "asset": "AAPL",
+    "country": "USA",
+    "model": "deepQLearning" # optional
+}
+
+headers = {
+    'api-key': 'YOUR_API_KEY',
+    'Content-Type': 'application/json'
+}
+request_prediction(url, payload, headers)
+```
+
+### Sample Crypto Payload
+
+```
+url = "http://api.agi.expert/predict_simple"
+
+payload = {
+    "exchange": "Crypto",
+    "asset": "BTC",
+    "country": "USA"
+}
+
+headers = {
+    'api-key': 'YOUR_API_KEY',
+    'Content-Type': 'application/json'
+}
+request_prediction(url, payload, headers)
+```
+
+### Notes
+
+ - Make sure to replace 'YOUR_API_KEY' with your actual API key.
+ - The model parameter is optional. If not provided, the default model used will be "deepQLearning".
+ - The verify function is used to check the prediction status and results after initiating a prediction.
+
+
 
 # search models
 
