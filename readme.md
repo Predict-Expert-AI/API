@@ -101,7 +101,7 @@ request_prediction(url, payload, headers)
 ### Convert files to Q&A
 
 ```
-url = "http://api.agi.expert/predict_simple"
+url = "http://api.agi.expert/convert_simple"
 
 payload = {
     "file": "file-390303f",
