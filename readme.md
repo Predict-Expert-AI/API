@@ -1,6 +1,6 @@
 # API
 
-## Predict Simple
+## Finance Prediction Models
 
 > The Predict Simple API allows you to initiate predictions for specific stock and crypto assets. This API is designed to be simple to use, requiring only a few parameters to generate predictions. Below, you'll find information on how to use the API, its endpoint, and sample function calls in Python.
 
@@ -94,6 +94,65 @@ request_prediction(url, payload, headers)
  - The model parameter is optional. If not provided, the default model used will be "deepQLearning".
  - The verify function is used to check the prediction status and results after initiating a prediction.
 
+
+
+### Training endpoints
+
+### Convert files to Q&A
+
+```
+url = "http://api.agi.expert/predict_simple"
+
+payload = {
+    "file": "file-390303f",
+    "description": "This is for python code knowledge",
+    "name": "TensorFlow",
+    "type": "Code", #check docs for list of types
+}
+
+headers = {
+    'api-key': 'YOUR_API_KEY',
+    'Content-Type': 'application/json'
+}
+request_prediction(url, payload, headers)
+```
+
+### Tokenize
+
+```
+url = "http://api.agi.expert/tokenize_simple"
+
+payload = {
+    "type": "word", #subword, character
+    "file": "file-343093"
+}
+
+headers = {
+    'api-key': 'YOUR_API_KEY',
+    'Content-Type': 'application/json'
+}
+request_prediction(url, payload, headers)
+```
+
+
+### Train
+
+```
+url = "http://api.agi.expert/train_simple"
+
+payload = {
+    "trainingfile": "file-232e38",
+    "validationfile": "file-383e9",
+    "epochs": "5",
+    "model": "WizardLM-70B-V1.0"
+}
+
+headers = {
+    'api-key': 'YOUR_API_KEY',
+    'Content-Type': 'application/json'
+}
+request_prediction(url, payload, headers)
+```
 
 
 # search models
