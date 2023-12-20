@@ -1,4 +1,4 @@
-# API
+# AGI.EXPERT API
 
 ## Finance Prediction Models
 
@@ -96,7 +96,7 @@ request_prediction(url, payload, headers)
 
 
 
-### Training endpoints
+# Training endpoints
 
 ### Convert files to Q&A
 
