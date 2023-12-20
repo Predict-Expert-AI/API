@@ -107,7 +107,9 @@ payload = {
     "file": "file-390303f",
     "description": "This is for python code knowledge",
     "name": "TensorFlow",
-    "type": "Code", #check docs for list of types
+    "chunksize": "500",
+    "questionsperchunk": "5 to 15",
+    "model": "gpt-3.5-turbo-1106"
 }
 
 headers = {
@@ -124,7 +126,8 @@ url = "http://api.agi.expert/tokenize_simple"
 
 payload = {
     "type": "word", #subword, character
-    "file": "file-343093"
+    "file": "file-343093",
+    "model": "T5"
 }
 
 headers = {
