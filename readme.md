@@ -96,7 +96,7 @@ request_prediction(url, payload, headers)
 
 
 
-# Training endpoints
+# Training endpoints (Invite-only)
 
 ### Convert files to Q&A
 
